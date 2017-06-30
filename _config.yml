@@ -1,0 +1,13 @@
+title: summary
+email: 64@live.jp
+description: portfolio.
+baseurl: ""
+url: "https://kat-atat.github.io"
+github_username:  kat-atat
+
+author: "*nikki"
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
