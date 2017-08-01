@@ -7,6 +7,10 @@ github_username:  kat-atat
 
 author: "*nikki"
 
+defaults:
+  - values:
+      layout: "default"
+
 # Build settings
 exclude:
   - Gemfile
