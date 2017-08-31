@@ -12,6 +12,8 @@ defaults:
       layout: "default"
 
 # Build settings
+plugins:
+  - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
