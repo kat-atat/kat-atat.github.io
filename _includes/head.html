@@ -1,0 +1,40 @@
+{% comment %}
+
+## name
+  head
+
+## arguments
+  isWebapp: boolean
+
+{% endcomment %}
+
+
+<head>
+
+  <meta charset="utf-8">
+  {% assign title = page.title | default: site.title %}
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% assign description = page.excerpt | default: site.description | strip_html | strip_newlines | escape | truncate: 160 %}
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | absolute_url }}">
+  <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | absolute_url }}">
+
+  <link rel="stylesheet" href="{{ "/assets/index.css" | relative_url }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  {% if include.isWebapp %}
+  <link rel="manifest" href="manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="">
+  <link rel="apple-touch-icon" href="">
+  <link rel="apple-touch-startup-image" href="">
+  <meta name="msapplication-TileImage" content="">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  {% endif %}
+</head>

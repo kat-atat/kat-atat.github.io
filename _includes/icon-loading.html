@@ -1,0 +1,46 @@
+<div class="loading">
+  <style>
+    .loading {
+      width: 12vmin;
+      height: 12vmin;
+      padding: 0 2vmin 2vmin 0;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+
+      transition: opacity 0.6s;
+    }
+
+    .loading-loading {
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+  </style>
+  {% include icon-loading.svg %}
+  <script>
+    (function() {
+
+      this.DOMContentLoaded = (function() {
+        if (!this.classList.contains("loading-loading")) {
+          this.classList.add("loading-loading");
+        }
+      }).bind(this);
+
+      this.onload = (function() {
+        this.classList.remove("loading-loading");
+      }).bind(this);
+
+      this.onunload = (function() {
+        if (!this.classList.contains("loading-loading")) {
+          this.classList.add("loading-loading");
+        }
+      }).bind(this);
+
+      window.addEventListener("DOMContentLoaded", this.DOMContentLoaded);
+      window.addEventListener("load", this.onload);
+      window.addEventListener("beforeunload", this.onunload);
+
+    }).call(document.currentScript.parentNode);
+  </script>
+</div>

@@ -1,0 +1,34 @@
+:root {
+  // respect the system fonts
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+
+  // font size is responsive
+  font-size: calc(6px + 0.6vw);
+
+  // box-sizing is border-box
+  & *,
+  & *::before,
+  & *::after { box-sizing: border-box; }
+
+  // all elements has no margin
+  & * { margin: 0; }
+
+  // h has vertical padding space
+  & h1, & h2, & h3, & h4, & h5, & h6 { padding: 1em 0; }
+
+  & img, & svg, & canvas {
+    // images is fluid
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  // surpress disolay list-item
+  li { display: block; }
+
+  // list-item elements has 2space sized indent
+  li, dd { text-indent: 2em; }
+
+  // when scroled, touch scrolling was smoosed
+  * { -webkit-overflow-scrolling: touch; }
+}

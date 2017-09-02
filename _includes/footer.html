@@ -1,0 +1,75 @@
+{% comment %}
+
+## name
+  footer
+
+## BEM-map
++ footer
+  + footer--site site
+    + site--title
+    + site--description
+  + footer--maintainers maintainers
+    + maintainers--title
+    + maintainers--maintainer maintainer
+      + maintainer--name
+      + maintainer--details details
+        + details--name
+        + details--value
+  + footer--update update
+    + update--title
+    + time
+      + year
+      + month
+      + day
+
+{% endcomment %}
+
+
+<footer class="footer">
+
+  <section class="footer--site site">
+    {% if site.title %}
+    <h1 class="site--title">
+      <a class="button" href="{{ site.url }}">{{ site.title }}</a>
+    </h1>
+    {% endif %}
+
+    {% if site.description %}
+    <p class="site--description">{{ site.description }}</p>
+    {% endif %}
+  </section>
+
+  <section class="footer--maintainers maintainers">
+    {% if site.author %}
+    <h1 class="maintainers--title">maintainer</h1>
+    <section class="maintainer">
+      <p class="maintainer--name">{{ site.author }}</p>
+      <dl class="maintainer--details details">
+        {% if site.email %}
+        <dt class="details--name">email</dt>
+        <dd class="details--value"><a class="button" href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+        {% endif %}
+
+        {% if site.github_username %}
+        <dt class="details--name">github</dt>
+        <dd class="details--value"><span class="button">{% include icon-github.html username = site.github_username %}</span></dd>
+        {% endif %}
+      </dl>
+    </section>
+    {% endif %}
+  </section>
+
+  <section class="footer--update">
+    {% if site.time %}
+    <p class="update">
+      <span class="update--title">last update: </span>
+      <time class="update--time time" datetime="{{ site.time }}">
+        <span class="time--year">{{ site.time | date: "%Y" }}</span>-<!--
+        --><span class="time--month">{{ site.time | date: "%m" }}</span>-<!--
+        --><span class="time--day">{{ site.time | date: "%d" }}</span>
+      </time>
+    </p>
+    {% endif %}
+  </section>
+
+</footer>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+<style>
+article {
+  max-width: calc(100vw - 10mm);
+  max-height: calc(100vh - 10mm);
+  overflow: scroll;
+  font-family: "游明朝",  "メイリオ", "ＭＳ 明朝", serif;
+  line-height: 3;
+  letter-spacing: 0.25em;
+  text-indent: 1em;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  -webkit-font-feature-settings: "pkna";
+  font-feature-settings: "pkna";
+}
+
+article time,
+article code {
+  line-height: initial;
+  letter-spacing: initial;
+  text-indent: initial;
+  -ms-writing-mode: initial;
+  -webkit-writing-mode: initial;
+  writing-mode: initial;
+  -webkit-font-feature-settings: initial;
+  font-feature-settings: initial;
+}
+
+article::-webkit-scrollbar {
+  width: 10mm;
+  height: 10mm;
+}
+
+article::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+
+article::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #E5E5E5;
+}
+</style>
+
+  <article>
+    <header>
+      <h1>{{ page.title }}</h1>
+      {% if page.date %}
+        <p>date: <time datetime="{{ page.date }}">{{ page.date }}</time></p>
+      {% else %}
+        <p>date: <time datetime="{{ site.date }}">{{ site.date }}</time></p>
+      {% endif %}
+    </header>
+    <section>{{ content }}</section>
+  </article>
+
+  {% include footer.html %}
+</body>
+</html>

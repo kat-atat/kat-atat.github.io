@@ -1,0 +1,83 @@
+.page {
+
+  &--footer {
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+
+      &--site { flex: 0 0 61.8%; }
+      &--maintainers { flex: 0 0 38.2%; }
+      &--update { flex: 0 0 100%; }
+
+      padding: 1em 1em 3em;
+      max-width: 150vmin;
+
+      & .site {
+        letter-spacing: 0.2em;
+
+        &--title {
+          font-size: 1.5em;
+          font-weight: normal;
+        }
+
+        &--description {
+          padding: 1.5em 0;
+          font-size: 0.75em;
+        }
+      }
+
+      & .maintainers {
+        &--title {
+          padding: 1.5em 0;
+          font-weight: normal;
+          letter-spacing: 0.2em;
+        }
+
+        & .maintainer {
+          padding: 1em 0;
+
+          &--name {
+            font-size: 1.75em;
+            letter-spacing: 0.2em;
+            font-weight: bold;
+          }
+
+          & .details {
+
+            &--name {
+              letter-spacing: 0.2em;
+            }
+
+            &--value {
+              padding: 0 0 1em;
+            }
+          }
+        }
+      }
+
+      & .update {
+        font-size: 0.8em;
+
+        & .time {
+          letter-spacing: 0.2em;
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 20%, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes wobble {
+  from { transform: none; }
+  15% { transform: translate3d(-25%, 0, 0); }
+  30% { transform: translate3d(20%, 0, 0); }
+  45% { transform: translate3d(-15%, 0, 0); }
+  60% { transform: translate3d(10%, 0, 0); }
+  75% { transform: translate3d(-5%, 0, 0); }
+  to { transform: none; }
+}

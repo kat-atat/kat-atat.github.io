@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+
+// variables
+$light: hsla(4, 6%, 97%, 1);
+$dark:  hsla(314, 18%, 27%, 1);
+
+
+// Import partials.
+@import "stelladial/base";
+@import "stelladial/layouts/default";
+@import "stelladial/layouts/error";
+@import "stelladial/layouts/home";
+@import "stelladial/layouts/image";
+@import "stelladial/layouts/post";
+@import "stelladial/themes/light";
+@import "stelladial/themes/dark";

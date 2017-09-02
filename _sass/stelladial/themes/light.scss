@@ -1,0 +1,69 @@
+.theme-light {
+  background: $light;
+  color: $dark;
+  stroke: $light;
+  fill: $dark;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  svg, svg * {
+    fill: inherit;
+    stroke: inherit;
+  }
+
+  .button {
+    min-width: 7mm;
+    min-height: 7mm;
+    line-height: calc(7mm + 1em);
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+  }
+
+  & .articles .header img { box-shadow: 0 1px 1px 0 $dark; }
+
+  & .articles .header {
+    &--image-noImage {
+      background: $dark;
+    }
+  }
+
+  .page--footer {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+  }
+
+  .post {
+    .page {
+
+      &--article {
+        box-shadow: 0 1px 2px 0 $dark;
+
+        & code {
+          background: $dark;
+          color: $light;
+        }
+      }
+
+      &--articles {
+        & .article {
+          & .header { box-shadow: 0 1px 1px 0 $dark; }
+          & .header {
+            &--image-noImage {
+              background: $dark;
+            }
+          }
+        }
+      }
+
+      &--footer {
+        border: none;
+        box-shadow: 0 1px 2px 0 $dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{% comment %}
+
+## name
+  page
+
+## BEM-map
++ page
+  + page--header header
+    + header--site site
+      + site--title
+      + site--description
+  + page--article page--article-{ layout }
+    + [article](article.html)
+  + page--articles articles
+    + articles--article articles--article-{ layout }
+      + [article](article.html)
+  + page--footer footer
+    + [footer](footer.html)
+
+{% endcomment %}
+
+
+<section class="page">
+
+  <header class="page--header header">
+    <section class="header--site site">
+      <h1 class="site--title">{{ site.title }}</h1>
+      <p class="site--description">{{ site.description }}</p>
+    </section>
+  </header>
+
+  <div class="page--article page--article-{{ page.layout }}">{% include article.html %}</div>
+
+  <section class="page--articles articles">
+    {% for post in site.posts %}
+    <a class="articles--article articles--article-{{ post.layout }}" href="{{ post.url | relative_url }}">
+      {% include article.html page = post isExcerpt = true %}
+    </a>
+    {% endfor %}
+  </section>
+
+  <div class="page--footer">{% include footer.html %}</div>
+
+</section>
