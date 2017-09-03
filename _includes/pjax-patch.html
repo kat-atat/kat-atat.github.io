@@ -1,0 +1,13 @@
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,WeakMap,WeakSet,Array.prototype.findIndex,Array.prototype.@@iterator,String.prototype.repeat&amp;flags=gated"></script>
+<script src="{{ "/assets/pjax-api/dist/pjax-api.min.js" | relative_url }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    var Pjax = require("pjax-api").Pjax;
+    new Pjax({
+      link: ".articles a",
+      areas: [".page--article .article"]
+    });
+
+  });
+</script>
